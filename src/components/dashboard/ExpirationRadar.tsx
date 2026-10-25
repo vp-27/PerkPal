@@ -1,4 +1,4 @@
-import { ChevronRight, Check, Bell, Clock3, CircleAlert } from "lucide-react";
+import { ChevronRight, Bell, Clock3, CircleAlert } from "lucide-react";
 import { BrandIcon } from "@/components/common/BrandLogos";
 import {
   GiftCard,
@@ -7,6 +7,7 @@ import {
   WarrantyItem,
 } from "@/lib/rewardsData";
 import { VaultItem } from "./ItemDetailSheet";
+import Pal from "@/components/common/Pal";
 import { expirationStatus } from "@/lib/expiration";
 
 export default function ExpirationRadar({
@@ -15,6 +16,7 @@ export default function ExpirationRadar({
   onSelectItem: (item: VaultItem) => void;
 }) {
   const items = RewardsStore.getExpiringRadarItems();
+  const urgentCount = items.filter((item) => item.expiresDays <= 7).length;
   return (
     <section id="upcoming-expirations">
       <div className="section-title">
@@ -24,6 +26,19 @@ export default function ExpirationRadar({
           {items.length} upcoming
         </span>
       </div>
+      {urgentCount > 0 && (
+        <div className="pal-deadline-hint">
+          <div>
+            <strong>
+              {urgentCount === 1
+                ? "One to use this week."
+                : `${urgentCount} to use this week.`}
+            </strong>
+            <p>Pal’s keeping an eye out.</p>
+          </div>
+          <Pal pose="pointing" decorative />
+        </div>
+      )}
       <div className="expiry-list">
         {items.length ? (
           items.map((item) => {
@@ -70,7 +85,7 @@ export default function ExpirationRadar({
           })
         ) : (
           <div className="py-7 text-center">
-            <Check size={22} className="mx-auto text-primary mb-3" />
+            <Pal pose="celebrating" className="empty-pal" />
             <p className="text-xs text-muted-foreground">
               All caught up. Nothing expiring soon.
             </p>

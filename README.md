@@ -89,7 +89,7 @@ For static hosting, publish `dist/` and configure an SPA fallback to `index.html
 
 ## Pal and brand assets
 
-**Pal** is PerkPal’s sage-green companion with a gold reward coin. The transparent master artwork lives in [`public/mascot/`](public/mascot/); its [character notes and generation prompt](public/mascot/README.md) document the design for future pointing, waving, and celebration poses. Reuse the shared `Pal` component when adding it to a page.
+**Pal** is PerkPal’s sage-green companion with a gold reward coin. The transparent master artwork lives in [`public/mascot/`](public/mascot/); its [character notes and generation prompt](public/mascot/README.md) document the character and its poses. Pal points out useful content, celebrates a saved item, and looks around in search and not-found states. Reuse the shared `Pal` component and its `pose` prop when adding it to a page.
 
 Merchant logos are stored locally in [`public/brands/`](public/brands/), with download provenance recorded in [`sources.json`](public/brands/sources.json). The resolver uses initials for unsupported brands rather than inventing a logo. Brand names and marks identify demo examples and do not imply affiliation or partnership.
 

@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Layers2 } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
+import Pal from "@/components/common/Pal";
 import { Button } from "@/components/ui/button";
 export default function NotFound() {
   return (
     <main className="min-h-screen flex items-center justify-center p-8 text-center">
       <div>
-        <Layers2 size={40} className="mx-auto mb-7 text-primary" />
+        <Pal pose="searching" className="not-found-pal" priority animate />
         <span className="eyebrow justify-center">404 / A LITTLE OFF TRACK</span>
         <h1 className="text-3xl font-semibold tracking-tight mt-5 mb-4">
           This perk is a little hard to find.

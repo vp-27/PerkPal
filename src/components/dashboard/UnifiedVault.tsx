@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Pal from "@/components/common/Pal";
 import { ArrowUpRight, Search, Clock3 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { BrandIcon } from "@/components/common/BrandLogos";
@@ -154,8 +155,8 @@ export default function UnifiedVault({
         </div>
       ) : (
         <div className="empty-state">
-          <Search className="mx-auto text-muted-foreground" size={23} />
-          <p>No little extras found here.</p>
+          <Pal pose="searching" className="empty-pal" animate />
+          <p>No matches yet. Pal’s looking too.</p>
           <button
             onClick={() => {
               setSearch("");

@@ -6,7 +6,6 @@ import {
   ChevronRight,
   Coffee,
   Gift,
-  Layers2,
   ShieldCheck,
   Bell,
   Wallet,
@@ -30,7 +29,8 @@ function WalletPreview() {
       <div className="wallet-preview">
         <div className="preview-top">
           <span>
-            <Layers2 size={18} /> Your everyday wallet
+            <Pal className="preview-logo" decorative priority /> Your everyday
+            wallet
           </span>
           <span className="preview-live">
             <span />
@@ -106,7 +106,7 @@ function WalletPreview() {
         </Link>
       </div>
       <div className="hero-pal">
-        <Pal priority />
+        <Pal pose="pointing" priority animate />
         <span>
           Meet Pal.<small>Your perks have a friend.</small>
         </span>
@@ -367,7 +367,7 @@ export default function Index() {
         <section className="site-width">
           <div className="closing-cta">
             <span className="cta-symbol">
-              <Layers2 size={34} />
+              <Pal pose="celebrating" decorative />
             </span>
             <h2>
               There’s more in your everyday.

@@ -8,7 +8,9 @@ import {
   Wallet,
   ArrowDownLeft,
   Link2,
+  X,
 } from "lucide-react";
+import Pal from "@/components/common/Pal";
 import AppLayout from "@/components/layout/AppLayout";
 import { Button } from "@/components/ui/button";
 import UnifiedVault from "@/components/dashboard/UnifiedVault";
@@ -22,6 +24,7 @@ import { DEMO_PERSONAS, RewardsStore } from "@/lib/rewardsData";
 export default function Dashboard() {
   const [selected, setSelected] = useState<VaultItem | null>(null);
   const [addOpen, setAddOpen] = useState(false);
+  const [celebrating, setCelebrating] = useState(false);
   const [, update] = useState(0);
   useEffect(() => {
     if (!localStorage.getItem("perkpal_user")) {
@@ -36,6 +39,11 @@ export default function Dashboard() {
       window.removeEventListener("perkpal_auth_change", refresh);
     };
   }, []);
+  useEffect(() => {
+    if (!celebrating) return;
+    const timeout = window.setTimeout(() => setCelebrating(false), 6500);
+    return () => window.clearTimeout(timeout);
+  }, [celebrating]);
   let name = "Alex";
   try {
     name =
@@ -63,6 +71,21 @@ export default function Dashboard() {
             Add an item
           </Button>
         </div>
+        {celebrating && (
+          <div className="pal-success" role="status">
+            <Pal pose="celebrating" decorative animate />
+            <div>
+              <strong>One more thing, all together.</strong>
+              <p>Your new item is saved in your wallet.</p>
+            </div>
+            <button
+              onClick={() => setCelebrating(false)}
+              aria-label="Dismiss Pal’s celebration"
+            >
+              <X size={16} />
+            </button>
+          </div>
+        )}
         <div className="stat-grid">
           <div className="stat-card primary-stat">
             <div className="stat-label">
@@ -155,7 +178,10 @@ export default function Dashboard() {
         <AddItemDialog
           isOpen={addOpen}
           onClose={() => setAddOpen(false)}
-          onItemAdded={() => update((t) => t + 1)}
+          onItemAdded={() => {
+            update((t) => t + 1);
+            setCelebrating(true);
+          }}
         />
         <ItemDetailSheet
           item={selected}

@@ -9,7 +9,7 @@ export default function SignIn() {
       <Navbar />
       <main className="auth-layout">
         <div className="auth-story">
-          <Pal className="auth-pal" priority />
+          <Pal pose="celebrating" className="auth-pal" priority animate />
           <h1>
             A little less
             <br />
