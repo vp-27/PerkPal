@@ -1,4 +1,5 @@
-import { Check, Layers2 } from "lucide-react";
+import { Check } from "lucide-react";
+import Pal from "@/components/common/Pal";
 import AuthForm from "@/components/auth/AuthForm";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -8,7 +9,7 @@ export default function SignIn() {
       <Navbar />
       <main className="auth-layout">
         <div className="auth-story">
-          <Layers2 size={37} strokeWidth={1.5} />
+          <Pal className="auth-pal" priority />
           <h1>
             A little less
             <br />

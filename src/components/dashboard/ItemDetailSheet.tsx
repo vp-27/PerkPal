@@ -31,6 +31,7 @@ import {
   RewardsStore,
 } from "@/lib/rewardsData";
 import { useToast } from "@/hooks/use-toast";
+import { expirationStatus } from "@/lib/expiration";
 
 export type VaultItem =
   | { type: "reward"; data: RewardProgram }
@@ -57,6 +58,13 @@ export const ItemDetailSheet: React.FC<ItemDetailSheetProps> = ({
   const { toast } = useToast();
 
   if (!item) return null;
+  const days =
+    item.type === "giftcard"
+      ? item.data.isExpiringSoon
+        ? 14
+        : 999
+      : item.data.expiresDays;
+  const expiry = expirationStatus(days);
 
   const handleCopy = (text: string, key: string) => {
     navigator.clipboard.writeText(text);
@@ -173,33 +181,14 @@ export const ItemDetailSheet: React.FC<ItemDetailSheetProps> = ({
               </div>
             </div>
 
-            {/* Expiration urgency pill */}
-            {item.type === "reward" && item.data.expiresDays < 60 && (
-              <Badge
-                variant={item.data.expiresDays <= 7 ? "destructive" : "outline"}
-                className={`text-2xs font-medium px-2 py-0.5 ${
-                  item.data.expiresDays <= 7
-                    ? "bg-rose-500 text-white"
-                    : "text-amber-600 dark:text-amber-400 border-amber-500/40 bg-amber-500/10"
-                }`}
-              >
-                <Clock className="w-3 h-3 mr-1" />
-                {item.data.expiresIn}
-              </Badge>
-            )}
-
-            {item.type === "warranty" && (
-              <Badge
-                variant={item.data.expiresDays <= 30 ? "outline" : "secondary"}
-                className={`text-2xs font-medium px-2 py-0.5 ${
-                  item.data.expiresDays <= 30
-                    ? "text-amber-600 dark:text-amber-400 border-amber-500/40 bg-amber-500/10"
-                    : ""
-                }`}
-              >
-                {item.data.expiresDays} days left
-              </Badge>
-            )}
+            {days <= 60 ? (
+              <span className={`expiry-label expiry-${expiry.tone}`}>
+                <Clock size={12} aria-hidden="true" />
+                {expiry.label}
+              </span>
+            ) : item.type === "warranty" ? (
+              <Badge variant="secondary">{days} days left</Badge>
+            ) : null}
           </div>
         </SheetHeader>
 
@@ -455,17 +444,11 @@ export const ItemDetailSheet: React.FC<ItemDetailSheetProps> = ({
                 <span className="text-2xs text-muted-foreground uppercase tracking-wider font-semibold">
                   Coverage Status
                 </span>
-                <Badge
-                  className={`text-2xs font-medium ${
-                    item.data.expiresDays <= 30
-                      ? "bg-amber-500 text-white"
-                      : "bg-emerald-600 text-white"
-                  }`}
+                <span
+                  className={`expiry-label ${days <= 60 ? `expiry-${expiry.tone}` : "coverage-active"}`}
                 >
-                  {item.data.expiresDays <= 30
-                    ? "Expiring Soon"
-                    : "Active Protection"}
-                </Badge>
+                  {days <= 60 ? expiry.label : "Active coverage"}
+                </span>
               </div>
               <div className="text-xl font-semibold text-foreground">
                 {item.data.expiresDays} Days of Coverage Remaining

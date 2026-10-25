@@ -1,7 +1,7 @@
 import { useState, type HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
-interface LogoProps extends HTMLAttributes<HTMLElement> {}
+type LogoProps = HTMLAttributes<HTMLElement>;
 export interface BrandIconProps extends LogoProps {
   name?: string;
   code?: string;

@@ -2643,3 +2643,11 @@
     font-size: 8px;
   }
 }
+.auth-story .auth-pal {
+  width: 100px;
+  height: 116px;
+}
+.coverage-active {
+  background: hsl(var(--accent));
+  color: hsl(var(--primary));
+}
