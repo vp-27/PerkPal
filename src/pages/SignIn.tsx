@@ -1,28 +1,43 @@
-import React from 'react';
-import AuthForm from '@/components/auth/AuthForm';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import PerkPalAdvisor from '@/components/common/PerkPalAdvisor';
-
-export const SignIn: React.FC = () => {
+import { Check, Layers2 } from "lucide-react";
+import AuthForm from "@/components/auth/AuthForm";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+export default function SignIn() {
   return (
-    <div className="min-h-screen flex flex-col page-transition bg-background text-foreground relative">
+    <div className="auth-page">
       <Navbar />
-
-      <main className="flex-grow flex items-center justify-center pt-24 pb-16 px-4 relative overflow-hidden">
-        {/* Background glow meshes */}
-        <div className="absolute inset-0 overflow-hidden -z-10 pointer-events-none">
-          <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-[10%] -left-[10%] w-[450px] h-[450px] bg-amber-500/10 rounded-full blur-3xl" />
+      <main className="auth-layout">
+        <div className="auth-story">
+          <Layers2 size={37} strokeWidth={1.5} />
+          <h1>
+            A little less
+            <br />
+            scattered.
+            <br />
+            <em>A lot more yours.</em>
+          </h1>
+          <p>
+            The rewards you’ve earned, the gifts you’ve received, and a little
+            peace of mind. Give them all a place to call home.
+          </p>
+          <ul>
+            <li>
+              <Check size={16} />
+              Everyday rewards, together
+            </li>
+            <li>
+              <Check size={16} />
+              Gift cards, ready when you are
+            </li>
+            <li>
+              <Check size={16} />
+              Warranties, without the paper chase
+            </li>
+          </ul>
         </div>
-
         <AuthForm />
       </main>
-
       <Footer />
-      <PerkPalAdvisor />
     </div>
   );
-};
-
-export default SignIn;
+}

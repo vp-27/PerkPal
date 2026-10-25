@@ -1,0 +1,124 @@
+{
+  "starbucks": {
+    "file": "starbucks.ico",
+    "source": "https://www.starbucks.com/favicon.ico",
+    "bytes": 15406
+  },
+  "tacobell": {
+    "file": "tacobell.ico",
+    "source": "https://www.tacobell.com/_static/icons/favicon.ico",
+    "bytes": 15406
+  },
+  "target": {
+    "file": "target.png",
+    "source": "https://assets.targetimg1.com/static/images/favicon.ico",
+    "bytes": 4655
+  },
+  "amazon": {
+    "file": "amazon.ico",
+    "source": "https://www.amazon.com/favicon.ico",
+    "bytes": 15086
+  },
+  "apple": {
+    "file": "apple.ico",
+    "source": "https://www.apple.com/favicon.ico",
+    "bytes": 22382
+  },
+  "chipotle": {
+    "file": "chipotle.png",
+    "source": "https://www.chipotle.com/etc.clientlibs/cmgaemacs/clientlibs/clientlib-base/resources/icon-192x192.png",
+    "bytes": 24069
+  },
+  "sephora": {
+    "file": "sephora.ico",
+    "source": "https://www.sephora.com/img/ufe/favicon.ico",
+    "bytes": 15406
+  },
+  "delta": {
+    "file": "delta.ico",
+    "source": "https://www.delta.com/favicon.ico",
+    "bytes": 24038
+  },
+  "chase": {
+    "file": "chase.ico",
+    "source": "https://www.chase.com/etc/designs/chase-ux/favicon.ico",
+    "bytes": 15086
+  },
+  "marriott": {
+    "file": "marriott.ico",
+    "source": "https://www.marriott.com/favicon.ico",
+    "bytes": 1150
+  },
+  "united": {
+    "file": "united.ico",
+    "source": "https://www.united.com/favicon.ico",
+    "bytes": 15406
+  },
+  "capitalone": {
+    "file": "capitalone.ico",
+    "source": "https://www.capitalone.com/assets/shell/favicon.ico",
+    "bytes": 15086
+  },
+  "instantpot": {
+    "file": "instantpot.png",
+    "source": "https://instantpot.com/cdn/shop/files/image_603.png?v=1743504186&width=32",
+    "bytes": 1829
+  },
+  "amex": {
+    "file": "amex.png",
+    "source": "https://www.americanexpress.com/favicon.ico",
+    "bytes": 1358
+  },
+  "citi": {
+    "file": "citi.png",
+    "source": "https://www.citi.com/cbol-hp-static-assets/assets/favicon.ico",
+    "bytes": 8747
+  },
+  "hyatt": {
+    "file": "hyatt.ico",
+    "source": "https://www.hyatt.com/favicon.ico",
+    "bytes": 3390
+  },
+  "airfrance": {
+    "file": "airfrance.png",
+    "source": "https://www.airfrance.us/apple-touch-icon.png",
+    "bytes": 2131
+  },
+  "virgin": {
+    "file": "virgin.ico",
+    "source": "https://www.virginatlantic.com/_nextfavicons/favicon.ico",
+    "bytes": 67646
+  },
+  "wyndham": {
+    "file": "wyndham.svg",
+    "source": "https://www.wyndhamhotels.com/content/dam/wyndham/brand-icons/whr.svg",
+    "bytes": 551
+  },
+  "dominos": {
+    "file": "dominos.svg",
+    "source": "https://media.dominos.com/assets/files/logos_svg.zip",
+    "archive_entry": "logos_svg/DPZ_2025_Logo_Tile_Blue_RGB.svg",
+    "bytes": 2001
+  },
+  "dominos-wordmark": {
+    "file": "dominos-wordmark.svg",
+    "source": "https://media.dominos.com/assets/files/logos_svg.zip",
+    "archive_entry": "logos_svg/DPZ_2025_Logo_CombinationMark_Horizontal_Blue_RGB.svg",
+    "bytes": 6532
+  },
+  "dyson": {
+    "file": "dyson.svg",
+    "source": "https://www.dyson.com/etc.clientlibs/dyson/clientlibs/clientlib-main/resources/images/dyson-logo.svg",
+    "bytes": 1744
+  },
+  "hilton": {
+    "file": "hilton.svg",
+    "source": "https://www.hilton.com/modules/assets/svgs/logos/HH.svg",
+    "bytes": 8507
+  },
+  "sony": {
+    "file": "sony.svg",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Sony_logo.svg",
+    "bytes": 5135
+  }
+}
